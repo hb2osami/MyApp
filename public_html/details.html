@@ -1,0 +1,110 @@
+<div class="jumbotron text-left">
+        <ul>
+            <li>
+                <a href="" ng-click="showDetails = ! showDetails">SHA 1 :</a>
+                 <div class="procedure-details" ng-class="{ 'hidden': ! showDetails }">
+                    <p>Sha 1 : {{sha}}</p>
+                 </div>
+            </li>
+            
+            <li>
+                <a href="" ng-click="showURL = ! showURL">Url :</a>
+                 <div class="procedure-details" ng-class="{ 'hidden': ! showURL }">
+                    <p>Url : {{url}}</p>
+                 </div>
+            </li>
+            
+            <li>
+                <a href="" ng-click="showhtml_url = ! showhtml_url">html_url :</a>
+                 <div class="procedure-details" ng-class="{ 'hidden': ! showhtml_url }">
+                    <p>html_url  : {{html_url}}</p>
+                 </div>
+            </li>
+            
+            <li>
+                <a href="" ng-click="showcomments_url = ! showcomments_url">Comments_url  :</a>
+                 <div class="procedure-details" ng-class="{ 'hidden': ! showcomments_url }">
+                    <p>Comments_url : {{comments_url}}</p>
+                 </div>
+            </li>
+            <li>
+                <a href="" ng-click="showAuthor = ! showAuthor">Author :</a>
+                 <div class="procedure-Author" ng-class="{ 'hidden': ! showAuthor }">
+                     <p ng-repeat="(key, value) in author">
+                            {{key}}: {{value}}
+                    </p> 
+                 </div>
+            </li>
+             <li>
+                <a href="" ng-click="showCommit = ! showCommit">Commit :</a>
+                 <div class="procedure-Author" ng-class="{ 'hidden': ! showCommit }">
+                 
+                    <ul>
+                        <li>
+                            <a href="" ng-click="showMessage = ! showMessage">Message :</a>
+                            <div class="procedure-Author" ng-class="{ 'hidden': ! showMessage }">
+                                <p>{{msg}}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" ng-click="showAut = ! showAut">Author :</a>
+                            <div class="procedure-Author" ng-class="{ 'hidden': ! showAut }">
+                                <p ng-repeat="(key, value) in aut">
+                                    {{key}}: {{value}}
+                                </p> 
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" ng-click="showComi = ! showComi">Commiter :</a>
+                            <div class="procedure-Author" ng-class="{ 'hidden': ! showComi }">
+                                <p ng-repeat="(key, value) in comi">
+                                    {{key}}: {{value}}
+                                </p> 
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" ng-click="showTree = ! showTree">Tree :</a>
+                            <div class="procedure-Author" ng-class="{ 'hidden': ! showTree }">
+                                <p ng-repeat="(key, value) in tree">
+                                    {{key}}: {{value}}
+                                </p> 
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" ng-click="showVerif = ! showVerif">Verification :</a>
+                            <div class="procedure-Author" ng-class="{ 'hidden': ! showVerif }">
+                                <p ng-repeat="(key, value) in verif">
+                                    {{key}}: {{value}}
+                                </p> 
+                            </div>
+                        </li>
+                    </ul>
+            
+                 </div>
+            </li>
+            <li>
+                <a href="" ng-click="showParents = ! showParents">Parents</a>
+                <div class="procedure-Author" ng-class="{ 'hidden': ! showParents }">
+                <ul ng-repeat="obj in parents">
+                    <li>
+                        <a href="" ng-click="showParent = ! showParent">Parent{{$index + 1 }} </a>
+                        <div class="procedure-Author" ng-class="{ 'hidden': ! showParent }">
+                             <p ng-repeat="(key, value) in obj">
+                                {{key}}: {{value}}
+                             </p> 
+                        </div>
+                        
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="" ng-click="showCommiter = ! showCommiter">Commiter :</a>
+                 <div class="procedure-Author" ng-class="{ 'hidden': ! showCommiter}">
+                     <p ng-repeat="(key, value) in commiter">
+                            {{key}}: {{value}}
+                    </p> 
+                 </div>
+            </li>
+        </ul>
+
+</div>

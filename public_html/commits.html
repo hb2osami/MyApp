@@ -1,0 +1,35 @@
+<div class="jumbotron text-center">
+        <h1>Commits </h1>
+        <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Commit</th>
+<!--                    <th>Date</th>
+                    <th>Commiter</th>-->
+                    <th>
+                        <a href="" ng-click="orderByField='date'; reverseSort = !reverseSort">
+                          Date<span ng-show="orderByField == 'commit.author.name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a>
+                    </th>
+                    
+                    <th>
+                        <a href="" ng-click="orderByField='name'; reverseSort = !reverseSort">
+                        Name  <span ng-show="orderByField == 'commit.author.date'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                        </a>
+                    </th>
+                    
+                    <th>Profil</th>
+                  </tr>
+                </thead>
+                <tbody>     
+                    <tr ng-repeat="com in commits|orderBy:orderByField:reverseSort">
+                        <th scope="row">{{ $index + 1 }}</th>
+                        <td><a href="#details/{{$index}}">{{com.sha}}</a></td>
+                            <td>{{com.commit.author.date}}</td>
+                            <td><a href="{{com.author.html_url || com.author.email}}">{{com.commit.author.name}}</a></td> 
+                            <td><a ng-href="{{com.author.html_url || 'img/smiley.gif'}}"><img ng-src="{{com.author.avatar_url || 'img/smiley.gif'}} " width="42" height="42"></a></td> 
+                    </tr>  
+                </tbody>
+        </table>
+</div>
